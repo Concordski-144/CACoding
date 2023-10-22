@@ -42,7 +42,7 @@ public class SignupUseCaseFactory {
         return null;
     }
 
-    private static ClearController createClearUseCase(ViewManagerModel viewManagerModel, ClearViewModel clearViewModel, SignupViewModel signupViewModel, ClearUserDataAccessInterface userDataAccessObject) {
+    private static ClearController createClearUseCase(ViewManagerModel viewManagerModel, ClearViewModel clearViewModel, SignupViewModel signupViewModel, ClearUserDataAccessInterface userDataAccessObject) throws IOException {
         ClearOutputBoundary clearOutputBoundary = new ClearPresenter(clearViewModel, signupViewModel, viewManagerModel);
         ClearInputBoundary clearInteractor = new ClearInteractor(userDataAccessObject, clearOutputBoundary);
 
